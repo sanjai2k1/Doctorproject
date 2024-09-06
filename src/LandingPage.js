@@ -92,42 +92,43 @@ function LandingPage() {
     <>
       {/* Navbar */}
       <Navbar expand="lg" className="custom-navbar">
-        <Container fluid>
-          <Navbar.Brand href="#">
-            <img
-              src="https://th.bing.com/th/id/OIP.9BmHHAAqK4X0PEZJE3QPkwAAAA?rs=1&pid=ImgDetMain"
-              alt="Vk Hospital Logo"
-              className="logo"
-            />
-            Vk Hospital
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Nav className="me-auto my-2 my-lg-0">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#about">About Us</Nav.Link>
-              <NavDropdown title="Doctor Services" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#pediatrician">Pediatrician</NavDropdown.Item>
-                <NavDropdown.Item href="#neurologist">Neurologist</NavDropdown.Item>
-                <NavDropdown.Item href="#surgeon">Surgeon</NavDropdown.Item>
-                <NavDropdown.Item href="#ent-specialist">ENT Specialist</NavDropdown.Item>
-                <NavDropdown.Item href="#gp">General Practitioner</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#blogs">Doctor Blogs</NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-light">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
+  <Container fluid>
+    <Navbar.Brand href="#">
+      <img
+        src="https://th.bing.com/th/id/OIP.9BmHHAAqK4X0PEZJE3QPkwAAAA?rs=1&pid=ImgDetMain"
+        alt="Vk Hospital Logo"
+        className="logo"
+      />
+      <span className="hospital-title">Vk Hospital</span>
+    </Navbar.Brand>
+    <Navbar.Toggle aria-controls="navbarScroll" />
+    <Navbar.Collapse id="navbarScroll">
+      <Nav className="me-auto my-2 my-lg-0">
+        <Nav.Link href="#home">Home</Nav.Link>
+        <Nav.Link href="#about">About Us</Nav.Link>
+        <NavDropdown title="Doctor Services" id="navbarScrollingDropdown">
+          <NavDropdown.Item href="#pediatrician">Pediatrician</NavDropdown.Item>
+          <NavDropdown.Item href="#neurologist">Neurologist</NavDropdown.Item>
+          <NavDropdown.Item href="#surgeon">Surgeon</NavDropdown.Item>
+          <NavDropdown.Item href="#ent-specialist">ENT Specialist</NavDropdown.Item>
+          <NavDropdown.Item href="#gp">General Practitioner</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#blogs">Doctor Blogs</NavDropdown.Item>
+        </NavDropdown>
+      </Nav>
+      <Form className="d-flex">
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+        />
+        <Button variant="outline-light">Search</Button>
+      </Form>
+    </Navbar.Collapse>
+  </Container>
+</Navbar>
+
       
 
 

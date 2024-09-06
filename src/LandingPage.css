@@ -1,101 +1,129 @@
-/* LandingPage.css */
+.hospital-title {
+  font-size: 3rem; /* Large font size */
+  font-family: 'Poppins', sans-serif; /* Decorative font */
+  font-weight: bold; /* Make it bold */
+  color: #fff; /* Initial color */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  margin-left: 15px; /* Space between logo and title */
+}
 
+.hospital-title:hover {
+  color: #ffdd57; /* Change color on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Optional: Add text shadow for more emphasis */
+.hospital-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add subtle shadow */
+}
+
+
+
+/* LandingPage.css */
 .custom-navbar {
-    background: linear-gradient(90deg, #007bff, #00d084); /* Gradient background */
-    padding: 1rem 2rem; /* Increase the padding for a larger navbar */
-  }
-  
-  .navbar-brand {
-    display: flex;
-    align-items: center;
-    color: #fff; /* Text color */
-    font-size: 1.5rem; /* Larger font size for brand */
-  }
-  
-  .logo {
-    height: 50px; /* Adjust the size of the logo */
-    margin-right: 15px; /* Space between the logo and text */
-  }
-  
-  .nav-link, .navbar-brand, .navbar-toggler-icon {
-    color: #fff; /* Text color for links and toggler */
-    font-size: 1.2rem; /* Base font size for nav items */
-    transition: color 0.3s, transform 0.3s; /* Smooth transition for color and transformation */
-  }
-  
-  .nav-link:hover, .navbar-brand:hover {
-    color: #ffdd57; /* Bright color on hover */
-    text-decoration: none; /* Remove underline on hover */
-    transform: scale(1.1); /* Slightly enlarge text on hover */
-  }
-  
-  .navbar-toggler {
-    border: none; /* Remove the border from the toggler */
-  }
-  
-  .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Custom toggler icon */
-  }
-  
-  .navbar-collapse {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-control {
-    border-radius: 20px; /* Rounded corners for the search input */
-  }
-  
-  .btn-outline-light {
-    color: #fff; /* Button text color */
-    border-color: #fff; /* Button border color */
-  }
-  
-  .btn-outline-light:hover {
-    background-color: #fff; /* Background color on hover */
-    color: #007bff; /* Text color on hover */
-  }
-  
-  /* Animation for navbar items */
-  @keyframes slideIn {
-    from {
+  background: linear-gradient(90deg, #007bff, #00d084); /* Gradient background */
+  padding: 1rem 2rem; /* Adjusted padding for better spacing */
+  position: sticky; /* Make navbar sticky */
+  top: 0;
+  z-index: 1000; /* Ensure navbar stays above content */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add subtle shadow */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  color: #fff; /* Brand text color */
+  font-size: 1.5rem; /* Larger font size for brand */
+  font-weight: bold; /* Make the text bold */
+}
+
+.logo {
+  height: 50px; /* Adjusted size for better visibility */
+  margin-right: 15px; /* Space between the logo and text */
+}
+
+.nav-link, .navbar-brand, .navbar-toggler-icon {
+  color: #fff; /* White color for links and toggler */
+  font-size: 1.2rem; /* Font size for nav items */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smoother transition for color and transform */
+}
+
+.nav-link:hover, .navbar-brand:hover {
+  color: #ffdd57; /* Bright color on hover */
+  text-decoration: none; /* Remove underline */
+  transform: scale(1.1); /* Slight scaling on hover */
+}
+
+.navbar-toggler {
+  border: none; /* Remove border from the toggler */
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 30 30'%3e%3cpath stroke='%23fff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e"); /* Custom toggler icon */
+}
+
+.navbar-collapse {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  border-radius: 20px; /* Rounded search bar */
+  padding: 0.5rem 1rem; /* Adjust padding for better look */
+}
+
+.btn-outline-light {
+  color: #fff; /* Button text color */
+  border-color: #fff; /* Button border color */
+}
+
+.btn-outline-light:hover {
+  background-color: #fff; /* Background color on hover */
+  color: #007bff; /* Text color on hover */
+}
+
+/* Animation for navbar items */
+@keyframes slideIn {
+  from {
       opacity: 0;
       transform: translateY(-10px);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateY(0);
-    }
   }
-  
-  .navbar-nav {
-    animation: slideIn 0.5s ease-out; /* Apply animation to navbar items */
-  }
-  
-  /* Dropdown Styles */
-  .navbar-nav .dropdown-menu {
-    background: #f8f9fa; /* Light background for dropdown */
-    border: 1px solid #007bff; /* Border color */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-  }
-  
-  .navbar-nav .dropdown-item {
-    color: #333; /* Text color */
-    font-size: 1rem; /* Font size */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
-  }
-  
-  .navbar-nav .dropdown-item:hover {
-    background-color: #007bff; /* Background color on hover */
-    color: #fff; /* Text color on hover */
-    transform: scale(1.05); /* Slightly enlarge item on hover */
-  }
-  
-  .navbar-nav .dropdown-item.active {
-    background-color: #0056b3; /* Active item background color */
-    color: #fff; /* Active item text color */
-  }
+}
+
+.navbar-nav {
+  animation: slideIn 0.5s ease-out; /* Apply animation to navbar items */
+}
+
+/* Dropdown styles */
+.navbar-nav .dropdown-menu {
+  background: #f8f9fa; /* Light background for dropdown */
+  border: 1px solid #007bff; /* Border color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.navbar-nav .dropdown-item {
+  color: #333; /* Text color */
+  font-size: 1rem; /* Font size */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for dropdown items */
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #007bff; /* Background color on hover */
+  color: #fff; /* Text color on hover */
+  transform: scale(1.05); /* Slightly enlarge item on hover */
+}
+
+.navbar-nav .dropdown-item.active {
+  background-color: #0056b3; /* Active item background */
+  color: #fff; /* Active item text color */
+}
+
   
 
 /* LandingPage.css */
@@ -105,7 +133,7 @@
 .landing-page {
     margin-top: 50px;
     margin-bottom: 50px;
-    background-image: url('C:\Users\vijaykumar.v\Desktop\React project\doctorappointment\public\landingpic.jpg'); /* Path relative to the public folder */
+    background-image:  url('../public/images/landingpic1.jpg'); /* Path relative to the public folder */
     background-size: cover; /* Ensure the background image covers the section */
     background-position: center center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent image repetition */

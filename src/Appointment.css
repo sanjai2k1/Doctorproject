@@ -1,0 +1,143 @@
+/* Appointment Container Styling */
+.appointment-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5); /* Updated opacity to 0.5 */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px); /* Blurring the background behind */
+}
+
+/* Background Image */
+html, body {
+    height: 100%; /* Ensure full height of viewport */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hides the scrollbar */
+}
+
+body {
+    
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Keeps the background image centered */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+    height: 100vh; /* Ensures the background covers the full height of the viewport */
+    margin: 0;
+}
+
+/* Hover effect on the appointment container */
+.appointment-container:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings Styling */
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Doctor Info Styling */
+.doctor-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.doctor-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover animation on doctor image */
+.doctor-image:hover {
+    transform: rotate(360deg); /* Rotating effect */
+}
+
+/* Form Styling */
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #f7f7f7;
+}
+
+/* Hover effect on form inputs */
+input:focus,
+textarea:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* Submit Button Styling */
+.appointment-submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover animation on submit button */
+.appointment-submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .appointment-container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+}
+
+
+/* validation */
+
+.error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+  }
+  
+

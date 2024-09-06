@@ -1,0 +1,205 @@
+/* Ensure the background image covers the entire viewport */
+.background {
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card styling */
+.card-container {
+    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow for more depth */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+.card-container:hover {
+    transform: translateY(-10px); /* Hover effect for lifting card */
+}
+
+
+
+
+
+
+
+/* Ensure the background image covers the entire viewport */
+.background {
+    
+    background: url('C:/Users/vijaykumar.v/Desktop/React project/doctorappointment/public/Loginpic.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  
+  /* Card styling */
+.card-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow for more depth */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    animation: slideIn 1s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  /* Ensure opacity only affects background, not text */
+  .card-body {
+    opacity: 1; /* Reset opacity for text */
+  }
+  
+  /* Make text bold and decorative */
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Decorative text shadow */
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Add subtle text shadow */
+  }
+  
+  /* Bold input text */
+  .form-control {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+
+
+
+  .card-container:hover {
+    transform: translateY(-10px); /* Hover effect for lifting card */
+  }
+  
+  /* Card title styling */
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Form group styling */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  /* Input fields styling */
+  .form-control {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f3f3f3;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    color: #333;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    box-shadow: 10px 10px 10px rgba(37, 117, 252, 0.5); /* Glowing effect on focus */
+    background-color: #ffffff;
+  }
+  
+  .form-control:hover {
+    box-shadow: 0px 0px 8px rgba(37, 117, 252, 0.3);
+  }
+  
+  /* Button styling */
+  .btn-primary {
+    background: linear-gradient(45deg, #6a11cb, #2575fc); /* Attractive gradient */
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(45deg, #5a10b3, #1e5fcf); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight increase in size on hover */
+  }
+  
+  /* Error message styling */
+  .text-danger {
+    font-size: 0.9rem;
+    color: #e74c3c;
+  }
+  
+  /* Card animations */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 576px) {
+    .card-container {
+      padding: 20px;
+    }
+    .card-title {
+      font-size: 1.8rem;
+    }
+    .form-control {
+      font-size: 0.9rem;
+    }
+    .btn-primary {
+      font-size: 1rem;
+      padding: 10px;
+    }
+  }
+  
