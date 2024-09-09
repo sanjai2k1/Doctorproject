@@ -35,7 +35,7 @@
 /* Ensure the background image covers the entire viewport */
 .background {
     
-    background: url('C:/Users/vijaykumar.v/Desktop/React project/doctorappointment/public/Loginpic.jpg') no-repeat center center fixed;
+    background: url('C:\Users\sanjai.j\Desktop\Doctorproject\public\images\landingpic1.jpg') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;

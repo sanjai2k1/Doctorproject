@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Appointment.css';
+import axios from 'axios';
 
 const doctors = [
   { name: 'Dr. Sanjai', image: '/images/Sanjai.jpg' },
@@ -10,9 +11,21 @@ const doctors = [
   { name: 'Dr. Kavitha', image: 'https://th.bing.com/th/id/OIP.0ATUKUzvH0YCzUygxZFxLgAAAA?w=275&h=183&c=7&r=0&o=5&dpr=1.1&pid=1.7' },
 ];
 
-const Appointment = ({ selectedDoctor }) => {
-  const doctor = doctors.find((doc) => doc.name === selectedDoctor);
+const Appointment = () => {
+  const [doctor,setDoctor] = useState()
+  const [patient,setPatient] = useState()
+  const getDoctor = async () => {
 
+    const response = await axios.get("https://localhost:7146/api/Doctor/1")
+    setDoctor(response.data)
+  }
+
+  const getPatient = async () => {
+
+    const response = await axios.get("https://localhost:7146/api/Patient/1")
+    setPatient(response.data)
+    
+  }
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [patientName, setPatientName] = useState('');
@@ -26,17 +39,17 @@ const Appointment = ({ selectedDoctor }) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
+
+  useEffect(()=>{
+    getDoctor()
+    getPatient()
+  },[])
   const validateForm = () => {
     const newErrors = {};
 
     if (!date) newErrors.date = 'Please select a date.';
     if (!time) newErrors.time = 'Please select a time.';
-    if (!patientName) newErrors.patientName = 'Please enter your name.';
-    if (!email) {
-      newErrors.email = 'Please enter your email.';
-    } else if (!validateEmail(email)) {
-      newErrors.email = 'Please enter a valid email address.';
-    }
+ 
 
     return newErrors;
   };
@@ -46,16 +59,31 @@ const Appointment = ({ selectedDoctor }) => {
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length === 0) {
-      alert(`Appointment booked with Dr. ${selectedDoctor} on ${date} at ${time}`);
+      alert(`Appointment booked with Dr. ${doctor.name} on ${date} at ${time}`);
       setDate('');
       setTime('');
       setPatientName('');
       setEmail('');
       setMessage('');
       setErrors({});
+      
     } else {
       setErrors(newErrors);
+      return;
     }
+
+    console.log("submitting..")
+    const combinedDateTime = new Date(`${date}T${time}:00`); // Assuming the format is "yyyy-MM-ddTHH:mm:ss"
+      
+    // Convert it to ISO string (yyyy-MM-ddTHH:mm:ss) or customize as needed
+    const formattedDateTime = combinedDateTime.toISOString();
+    axios.post("https://localhost:7146/api/Bookings",{
+      "bookingDate": formattedDateTime,
+      "status": "Pending",
+      "doctorId": doctor.doctorId,
+      "patientId": patient.patientId,
+      "message": message
+    }).then((res)=>console.log(res))
   };
 
   return (
@@ -64,7 +92,7 @@ const Appointment = ({ selectedDoctor }) => {
 
       {doctor && (
         <div className="doctor-info">
-          <img src={doctor.image} alt={doctor.name} className="doctor-image" />
+          <img src =  {`data:image/jpg;base64,${doctor.imageData}`} alt={doctor.name} className="doctor-image" />
           <h3>{doctor.name}</h3>
         </div>
       )}
@@ -95,8 +123,9 @@ const Appointment = ({ selectedDoctor }) => {
           <label>Patient Name</label>
           <input
             type="text"
-            value={patientName}
+            value={patient ? patient.name : ""}
             onChange={(e) => setPatientName(e.target.value)}
+          readOnly
           />
           {errors.patientName && <span className="error-text">{errors.patientName}</span>}
         </div>
@@ -105,8 +134,9 @@ const Appointment = ({ selectedDoctor }) => {
           <label>Email</label>
           <input
             type="email"
-            value={email}
+            value={patient ? patient.email : ""}
             onChange={(e) => setEmail(e.target.value)}
+            readOnly
           />
           {errors.email && <span className="error-text">{errors.email}</span>}
         </div>

@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       
-      <BookAppoint />
+      <Cardiac/>
     </div>
     
   );
